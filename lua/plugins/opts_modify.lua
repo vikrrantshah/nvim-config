@@ -1,8 +1,6 @@
 return {
   { "folke/which-key.nvim", opts = { preset = "classic" } },
-  { "neovim/nvim-lspconfig", opts = {
-    inlay_hints = { enabled = false },
-  } },
+  { "neovim/nvim-lspconfig", opts = { inlay_hints = { enabled = false } } },
   {
     "nvim-telescope/telescope.nvim",
     keys = {
