@@ -15,3 +15,7 @@ vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Name (Rename Sym
 -- Move half page and center cursor to screen
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+vim.keymap.set("i", "<C-p>", function()
+  require("blink.cmp").show_and_insert({})
+end)
