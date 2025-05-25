@@ -1,12 +1,19 @@
 -- Others
-local function OpenUndotree()
+local function openUndotree()
   vim.cmd.UndotreeToggle()
   vim.cmd.UndotreeFocus()
 end
+vim.keymap.set("n", "<leader>ut", openUndotree, { desc = "[U]ndo [T]ree" })
 
-vim.keymap.set("n", "<leader>ut", OpenUndotree, { desc = "[U]ndo [T]ree" })
+local function showCompletions()
+  require("blink.cmp").show_and_insert({})
+end
+vim.keymap.set("i", "<C-p>", showCompletions)
 
-vim.keymap.set("n", "<C-g>", "<cmd>Git<CR>5j", { desc = "Git" })
+local function showLazygit()
+  Snacks.lazygit()
+end
+vim.keymap.set("n", "<C-g>", showLazygit)
 
 -- LSP
 vim.keymap.set("n", "<leader>r", "", { desc = "+replace" })
@@ -15,7 +22,3 @@ vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Name (Rename Sym
 -- Move half page and center cursor to screen
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
-
-vim.keymap.set("i", "<C-p>", function()
-  require("blink.cmp").show_and_insert({})
-end)

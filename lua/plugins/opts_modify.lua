@@ -43,7 +43,7 @@ return {
             { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
             { icon = " ", key = "p", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
             { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
-            { icon = " ", key = "g", desc = "Git", action = ":Git" },
+            { icon = " ", key = "g", desc = "Git", action = ":lua Snacks.lazygit()" },
             {
               icon = " ",
               key = "c",
